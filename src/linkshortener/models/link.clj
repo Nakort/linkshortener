@@ -1,7 +1,7 @@
 (ns linkshortener.models.link
   (:require [clojure.java.jdbc :as sql]))
 
-(defn find [code]
+(defn find-by-code [code]
     (sql/with-connection (System/getenv "DATABASE_URL")
                              (sql/with-query-results results
                                                            [(str "select * from links where code=" code)]
