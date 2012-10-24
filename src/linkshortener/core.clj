@@ -32,5 +32,5 @@
   (-> handler
     wrap-json-params))
 
-(defn -main []
-  (jetty/run-jetty #'app {:port 8080 :join? false}))
+(defn -main [port]
+  (jetty/run-jetty #'app {:port (Integer. port)}))

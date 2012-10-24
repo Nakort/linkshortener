@@ -2,8 +2,11 @@
   (:use lobos.connectivity))
 
 (def db
-    {:classname "org.postgresql.Driver"
-        :subprotocol "postgresql"
-        :subname "//localhost:5432/linkshortener"})
+    {   :classname "org.postgresql.Driver"
+        :user (System/getenv "DB_USER")
+        :password (System/getenv "DB_PASSWORD")
+        :subname (System/getenv "DATABASE_URL")
+        :subprotocol "postgresql"})
 
-(open-global db)
+(defn init []
+    (open-global (db)))
