@@ -9,4 +9,4 @@
         :subprotocol "postgresql"})
 
 (defn init []
-    (open-global (db)))
+    (open-global db))
