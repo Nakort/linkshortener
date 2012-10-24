@@ -1,5 +1,6 @@
 (defproject linkshortener "0.1.0-SNAPSHOT"
   :description "Link shortener"
+  :min-lein-version "2.0.0"
   :dependencies [[org.clojure/clojure "1.4.0" ]
                  [ring/ring-json "0.1.2" ]
                  [org.clojure/data.json "0.2.0"]
